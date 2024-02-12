@@ -1,5 +1,15 @@
 # Dosdonts
 
+- Straightforward app
+  - Show loaded pages
+  - Show main.js
+- Lazy loaded version
+  - Show loaded pages
+  - Show main.js
+- Migrate to standalone app along with route and components
+  - Lots of files has gone
+  - Can be lazy loaded
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 
 ## Development server
