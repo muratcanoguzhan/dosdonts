@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FirstComponent } from './pages/first/first.component';
-import { SecondComponent } from './pages/second/second.component';
 
 const routes: Routes = [
-  { path: 'first-component', component: FirstComponent },
-  { path: 'second-component', component: SecondComponent },
+  { path: 'first-component', loadChildren: () => import('./pages/first/first.module').then(m => m.FirstModule) },
+  { path: 'second-component', loadChildren: () => import('./pages/second/second.module').then(m => m.SecondModule) },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
