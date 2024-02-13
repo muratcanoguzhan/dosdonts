@@ -26,8 +26,19 @@ export class AppComponent {
     { id: '1', name: 'Semisel' },
     { id: '1', name: 'Buy Stroller' },
   ];
+
   no = 0;
   mutate() {
+    // mutate doesn't work becasue we don't change this.todos reference
+    // but we run changeDetection for TodoList by calling markForCheck() inside that component  
     this.todos[0].name = `${this.no++}. First item changed!`;
+  }
+
+  push() {
+    // active TodoListComponent for change detection
+    // we need to set a new instance to this.todos
+    const newTodos = [...this.todos];
+    newTodos.push({ id: '1', name: 'Pushed newly!' });
+    this.todos = newTodos;
   }
 }

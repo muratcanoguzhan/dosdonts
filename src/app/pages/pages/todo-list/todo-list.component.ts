@@ -1,5 +1,11 @@
 import { NgFor } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  inject,
+} from '@angular/core';
 import { Todo } from 'src/app/Todo';
 
 @Component({
@@ -13,13 +19,19 @@ import { Todo } from 'src/app/Todo';
       </li>
     </ul>
     {{ console() }}
+    <button (click)="markForCheck()">MarkForCheck</button>
   `,
   styleUrls: ['./todo-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoListComponent {
+  _changeDetectorRef = inject(ChangeDetectorRef);
+
   @Input() todos: Todo[] | undefined;
 
   console(): void {
     console.log('TodoListComponent rendered!');
   }
+
+  markForCheck = () => this._changeDetectorRef.markForCheck();
 }
