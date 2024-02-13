@@ -1,14 +1,16 @@
 # Dosdonts
 
-- Straightforward app
-  - Show loaded pages
-  - Show main.js
-- Lazy loaded version
-  - Show loaded pages
-  - Show main.js
-- Migrate to standalone app along with route and components
-  - Lots of files has gone
-  - Can be lazy loaded
+- Approaches as a Module or Standalone
+  - Straightforward app
+    - Show loaded pages
+    - Show main.js
+  - Lazy loaded version
+    - Show loaded pages
+    - Show main.js
+  - Migrate to standalone app along with route and components
+    - Lots of files has gone
+    - Can be lazy loaded
+  - ViewEncapsulation.None example
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 
