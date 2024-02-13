@@ -18,6 +18,7 @@
   - @Input with changing reference
   - @output usages
   - Observable async pipe
+- Observable unsubscribe
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 

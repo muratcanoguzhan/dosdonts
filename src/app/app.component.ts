@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { Todo } from './Todo';
 import { FirstComponent } from './pages/first/first.component';
-import { TodoListComponent } from './pages/pages/todo-list/todo-list.component';
+import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { SecondComponent } from './pages/second/second.component';
 
 @Component({

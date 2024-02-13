@@ -11,4 +11,16 @@ export const appRoutes: Routes = [
     loadComponent: () =>
       import('./pages/second/second.component').then((m) => m.SecondComponent),
   },
+  {
+    path: 'leaky-component',
+    loadComponent: () =>
+      import('./pages/leaky/leaky.component').then((m) => m.LeakyComponent),
+  },
+  {
+    path: 'not-leaky-component',
+    loadComponent: () =>
+      import('./pages/leaky/not-leaky.component').then(
+        (m) => m.NotLeakyComponent
+      ),
+  },
 ];

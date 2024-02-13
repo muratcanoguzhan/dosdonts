@@ -1,10 +1,35 @@
 <h1>Angular Router App</h1>
 <app-first></app-first>
 <app-second></app-second>
-<router-outlet></router-outlet>
 
 <hr />
 <button (click)="mutate()">Mutate Todo List</button>
 <button style="margin-left: 8px" (click)="push()">Push new todo</button>
 <app-todo-list [todos]="todos" />
+
+<hr />
+
+<nav>
+  <ul>
+    <li>
+      <a
+        routerLink="/leaky-component"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Leaky Component</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/not-leaky-component"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Not Leaky Component</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+
 <!-- The routed views render in the <router-outlet>-->

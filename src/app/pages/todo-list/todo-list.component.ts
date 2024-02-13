@@ -6,6 +6,7 @@ import {
   Input,
   inject,
 } from '@angular/core';
+import { Observable, interval } from 'rxjs';
 import { Todo } from 'src/app/Todo';
 
 @Component({
