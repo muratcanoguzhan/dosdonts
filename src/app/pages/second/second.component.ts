@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-second',
@@ -6,9 +6,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
     <p>second works!</p>
     <br />
     <button class="btn">Second Button</button>
+    {{console()}}
   `,
   styleUrls: ['./second.component.css'],
   standalone: true,
-  encapsulation: ViewEncapsulation.None,
 })
-export class SecondComponent {}
+export class SecondComponent {
+  console(): void {
+    console.log('SecondComponent rendered!');
+  }
+}

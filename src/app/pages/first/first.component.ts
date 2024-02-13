@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-first',
@@ -6,9 +6,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
     <p>first works!</p>
     <br />
     <button class="btn">First Button</button>
+    {{ console() }}
   `,
   styleUrls: ['./first.component.css'],
   standalone: true,
-  encapsulation: ViewEncapsulation.None,
 })
-export class FirstComponent {}
+export class FirstComponent {
+  console(): void {
+    console.log('FirstComponent rendered!');
+  }
+}

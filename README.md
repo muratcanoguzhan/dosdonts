@@ -10,7 +10,14 @@
   - Migrate to standalone app along with route and components
     - Lots of files has gone
     - Can be lazy loaded
-  - ViewEncapsulation.None example
+- ViewEncapsulation.None example
+- ChangeDetectionStrategy
+  - all browser events (click, mouseover, keyup, etc.)
+  - setTimeout() and setInterval()
+  - Ajax HTTP requests
+  - @Input with changing reference
+  - @output usages
+  - Observable async pipe
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 

@@ -1,23 +1,9 @@
 <h1>Angular Router App</h1>
-<nav>
-  <ul>
-    <li>
-      <a
-        routerLink="/first-component"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >First Component</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/second-component"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >Second Component</a
-      >
-    </li>
-  </ul>
-</nav>
-<!-- The routed views render in the <router-outlet>-->
+<app-first></app-first>
+<app-second></app-second>
 <router-outlet></router-outlet>
+
+<hr />
+<button (click)="mutate()">Mutate Todo List</button>
+<app-todo-list [todos]="todos" />
+<!-- The routed views render in the <router-outlet>-->
