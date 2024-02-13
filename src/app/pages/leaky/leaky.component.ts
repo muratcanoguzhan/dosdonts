@@ -4,7 +4,7 @@ import {
   Component,
   inject,
 } from '@angular/core';
-import { Observable, interval } from 'rxjs';
+import { Observable, Subject, interval, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-leaky',
@@ -15,6 +15,7 @@ import { Observable, interval } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LeakyComponent {
+  private readonly unsubscribe$ = new Subject<void>();
   _changeDetectorRef = inject(ChangeDetectorRef);
   // observable leak example
   value: number | undefined;
@@ -22,10 +23,15 @@ export class LeakyComponent {
 
   ngOnInit(): void {
     this.interval$ = interval(1000);
-    this.interval$.subscribe((val) => {
+    this.interval$.pipe(takeUntil(this.unsubscribe$)).subscribe((val) => {
       this.value = val;
       console.log(this.value);
       this._changeDetectorRef.markForCheck();
     });
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }
